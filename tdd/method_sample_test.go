@@ -7,6 +7,25 @@ import (
 	"github.com/stretchr/testify/mock"
 )
 
+// Test Duck
+func TestDuckRunMethod(t *testing.T) {
+	duck := NewDuck("bebek")
+	result := duck.Run()
+	assert.Equal(t, "Duck bebek can not run", result)
+}
+
+// End Test Duck
+////////////////////////////////////////////////
+// Test Dog
+func TestDogRunMethod(t *testing.T) {
+	dg := NewDog("Gahar", "Yellow")
+	result := dg.Run()
+	assert.Equal(t, "Dog Gahar with color Yellow can run", result)
+}
+
+// End Test Dog
+////////////////////////////////////////////////
+
 // mocks
 type mockAnimalCanRun struct {
 	mock.Mock
