@@ -3,6 +3,7 @@ package tdd
 import (
 	"fmt"
 	"math"
+	"net/http"
 )
 
 func SayHello(name string) string {
@@ -15,4 +16,8 @@ func OddOrEven(value int) string {
 		return fmt.Sprintf("%v is an odd number", value)
 	}
 	return fmt.Sprintf("%v is an even number", value)
+}
+
+func CheckHealth(writer http.ResponseWriter, req *http.Request) {
+	fmt.Fprintf(writer, "health check passed")
 }
