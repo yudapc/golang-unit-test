@@ -51,13 +51,3 @@ func (dg *dog) Run() string {
 func AnimalRunFast(animal Animal) string {
 	return animal.Run()
 }
-
-func DogRun() string {
-	dog := NewDog("Chamar", "White")
-	return AnimalRunFast(dog)
-}
-
-func DuckRun() string {
-	duck := NewDuck("wek wek")
-	return AnimalRunFast(duck)
-}
