@@ -44,14 +44,16 @@ func (m *mockAnimalCanRun) Run() string {
 func TestAnimalRunFast(t *testing.T) {
 	t.Run("Animal can run fast", func(t *testing.T) {
 		mockAnimal := new(mockAnimalCanRun)
-		mockAnimal.On("Run").Return("Run faster")
+		expected := "Run faster"
+		mockAnimal.On("Run").Return(expected)
 		result := AnimalRunFast(mockAnimal)
-		assert.Equal(t, "Run faster", result)
+		assert.Equal(t, expected, result)
 	})
 	t.Run("Animal can not run", func(t *testing.T) {
 		mockAnimal := new(mockAnimalCanRun)
-		mockAnimal.On("Run").Return("Can not run")
+		expected := "Can not run"
+		mockAnimal.On("Run").Return(expected)
 		result := AnimalRunFast(mockAnimal)
-		assert.Equal(t, "Can not run", result)
+		assert.Equal(t, expected, result)
 	})
 }
