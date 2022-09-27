@@ -29,21 +29,26 @@ func TestOddOrEvenSubSet(t *testing.T) {
 
 func TestOddOrEvenTableTest(t *testing.T) {
 	tests := []struct {
+		name     string
 		input    int
 		expected string
 	}{
 		{
+			name:     "When number in criteria == 1",
 			input:    42,
 			expected: "42 is an even number",
 		},
 		{
+			name:     "When number in criteria != 1",
 			input:    45,
 			expected: "45 is an odd number",
 		},
 	}
 
 	for _, test := range tests {
-		assert.Equal(t, test.expected, OddOrEven(test.input))
+		t.Run(test.name, func(t *testing.T) {
+			assert.Equal(t, test.expected, OddOrEven(test.input))
+		})
 	}
 }
 
